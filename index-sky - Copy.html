@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap" rel="stylesheet">
+
+   
+<link rel="stylesheet" href="style-sky - Copy.css" type="text/css">
+</head>
+
+<title>Mindful VR</title>
+
+<body>
+
+        <div class="sky">
+            <div class="sky__phase sky__dawn"></div>
+            <div class="sky__phase sky__noon"></div>
+            <div class="sky__phase sky__dusk"></div>
+
+            <div class="sky__phase sky__midnight">
+                <div id="sky__stars"></div>
+            </div>
+
+
+
+            <div class="orbit">
+                <div class="sun"></div>
+                <div class="moon"></div>
+            </div>
+
+
+            </div>
+
+
+
+
+
+    <script> 
+    const stars = 40;
+const skyStars = document.getElementById("sky__stars");
+const toggleAnimation = document.getElementById("toggle-animation");
+
+// Generate stars randomly using absolute position
+function createStars() {
+	for (let i = 0; i < stars; i++) {
+		let x = Math.floor(Math.random() * 100 + 1);
+		let y = Math.floor(Math.random() * 100 + 1);
+		const starPoint = document.createElement("div");
+		starPoint.style.left = `${x}%`;
+		starPoint.style.top = `${y}%`;
+		skyStars.appendChild(starPoint);
+	}
+}
+
+// Function to pause or play animation
+function playAnimation() {
+	if (document.body.classList.contains("pause")) {
+		document.body.classList.remove("pause");
+	} else {
+		document.body.classList.add("pause");
+	}
+}
+
+createStars();
+
+</script>
+
+
+</body>
+
+</html>
